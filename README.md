@@ -14,7 +14,6 @@ Ter um FAQ dentro da equipe de T.I para evitar interrupções dos colegas, e tam
 * MySQL
 * [Twitter Bootsrap](http://twitter.github.io/bootstrap/)
 * [jQuery](http://jquery.com)
-* [Modernizr](http://modernizr.com/)
 
 ### Query
 <pre>
