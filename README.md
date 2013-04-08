@@ -14,6 +14,7 @@ Ter um FAQ dentro da equipe de T.I para evitar interrupções dos colegas, e tam
 MySQL
 
 ### Estrutura
+@@@
 .
 ├── application
 │   ├── config
@@ -157,3 +158,4 @@ MySQL
     ├── sessions
     ├── views
     └── work
+@@@
