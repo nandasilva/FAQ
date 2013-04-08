@@ -7,7 +7,7 @@ Perguntas e respostas para dizer como um problema foi resolvido.
 Surge a dúvida => FAQ => Google => Pergunta pro colega
 
 ### Motivo
-Ter um FAQ dentro da equipe de T.I para evitar interrupções dos colegas, e também gerar um banco de conhecimento para a equipe toda.
+Ter um FAQ dentro da equipe de T.I para evitar interrupções dos colegas, e também gerar um banco de conhecimento para a equipe e a empresa.
 
 ### Tecnologias
 * [Laravel](http://laravel.com/)
