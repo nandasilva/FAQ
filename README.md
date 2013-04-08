@@ -28,8 +28,8 @@ CREATE TABLE faq.Problemas (
 	IDProblema INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	NomeProblema VARCHAR(150) NOT NULL,
 	SolucaoProblema TEXT NOT NULL,
-	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE NOW(),
-	updated_at TIMESTAMP
+	created_at DATETIME,
+	updated_at DATETIME
 );
 
 CREATE TABLE faq.Tags (
