@@ -10,11 +10,11 @@ Surge a dúvida => FAQ => Google => Pergunta pro colega
 Ter um FAQ dentro da equipe de T.I para evitar interrupções dos colegas, e também gerar um banco de conhecimento para a equipe toda.
 
 ### Tecnologias
-[Laravel](http://laravel.com/)
-MySQL
+* [Laravel](http://laravel.com/)
+* MySQL
 
 ### Estrutura
-@@@
+<pre>
 .
 ├── application
 │   ├── config
@@ -158,4 +158,4 @@ MySQL
     ├── sessions
     ├── views
     └── work
-@@@
+</pre>
