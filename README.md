@@ -24,24 +24,28 @@ USE faq;
 SET storage_engine = InnoDB;
 
 CREATE TABLE faq.Problemas (
-	IDProblema INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	NomeProblema VARCHAR(150) NOT NULL,
-	SolucaoProblema TEXT NOT NULL,
-	created_at DATETIME,
-	updated_at DATETIME
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    NomeProblema VARCHAR(150) NOT NULL,
+    SolucaoProblema TEXT NOT NULL,
+    created_at DATETIME,
+    updated_at DATETIME
 );
 
 CREATE TABLE faq.Tags (
-	IDTag INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	NomeTag VARCHAR(50) NOT NULL
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    NomeTag VARCHAR(50) NOT NULL,
+    created_at DATETIME,
+    updated_at DATETIME
 );
 
-CREATE TABLE faq.TagMap (
-	IDTagMap INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	IDProblema INT NOT NULL,
-	IDTag INT NOT NULL,
-	FOREIGN KEY (IDProblema) REFERENCES Problemas(IDProblema),
-	FOREIGN KEY (IDTag) REFERENCES Tags(IDTag)
+CREATE TABLE faq.Problema_Tag (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    problema_id INT NOT NULL,
+    tag_id INT NOT NULL,
+    created_at DATETIME,
+    updated_at DATETIME,
+    FOREIGN KEY (problema_id) REFERENCES Problemas(id),
+    FOREIGN KEY (tag_id) REFERENCES Tags(id)
 );
 </pre>
 
