@@ -7,20 +7,20 @@
 </form>
 
 <div class="accordion" id="accordion2">
-@foreach ( $problemas as $p )
-	<div class="accordion-group">
-		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-			{{ $p->NomeProblema }}
-			</a>
-		</div>
-		<div id="collapseOne" class="accordion-body collapse in">
-			<div class="accordion-inner">
-			Anim pariatur cliche...
+	@foreach ( $problemas as $p )
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+				{{ $p->nomeproblema }}
+				</a>
+			</div>
+			<div id="collapseOne" class="accordion-body collapse">
+				<div class="accordion-inner">
+				{{ $p->solucaoproblema }}
+				</div>
 			</div>
 		</div>
-	</div>
-@endforeach
+	@endforeach
 </div>
 
 @endsection
