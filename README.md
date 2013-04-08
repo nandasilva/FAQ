@@ -13,7 +13,8 @@ Ter um FAQ dentro da equipe de T.I para evitar interrupções dos colegas, e tam
 * [Laravel](http://laravel.com/)
 * MySQL
 * [Twitter Bootsrap](http://twitter.github.io/bootstrap/)
-* [Zepto JS](http://zeptojs.com/)
+* [jQuery](http://jquery.com)
+* [Modernizr](http://modernizr.com/)
 
 ### Query
 <pre>
