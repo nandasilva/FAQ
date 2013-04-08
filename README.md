@@ -13,6 +13,24 @@ Ter um FAQ dentro da equipe de T.I para evitar interrupções dos colegas, e tam
 * [Laravel](http://laravel.com/)
 * MySQL
 
+### Query
+<pre>
+CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci; 
+
+USE faq;
+
+SET storage_engine = InnoDB;
+
+CREATE TABLE faq.Problemas (
+    IDProblema INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeProblema VARCHAR(150) NOT NULL,
+	SolucaoProblema TEXT NOT NULL,
+	TagsProblema VARCHAR(200),
+	created_at TIMESTAMP,
+	updated_at TIMESTAMP
+);
+</pre>
+
 ### Estrutura
 <pre>
 .
