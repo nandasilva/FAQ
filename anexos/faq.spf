@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>faq</string>
+			<key>host</key>
+			<string>127.0.0.1</string>
+			<key>kcid</key>
+			<string>4748949536814196368</string>
+			<key>name</key>
+			<string>localhost</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>root</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8</string>
+			<key>contentFilter</key>
+			<dict/>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {733, 481}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci; 
+
+USE faq;
+
+SET storage_engine = InnoDB;
+
+CREATE TABLE faq.Problemas (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    NomeProblema VARCHAR(150) NOT NULL,
+    SolucaoProblema TEXT NOT NULL,
+    created_at DATETIME,
+    updated_at DATETIME
+);
+
+CREATE TABLE faq.Tags (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    NomeTag VARCHAR(50) NOT NULL,
+    created_at DATETIME,
+    updated_at DATETIME
+);
+
+CREATE TABLE faq.Problema_Tag (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    problema_id INT NOT NULL,
+    tag_id INT NOT NULL,
+    created_at DATETIME,
+    updated_at DATETIME,
+    FOREIGN KEY (problema_id) REFERENCES Problemas(id),
+    FOREIGN KEY (tag_id) REFERENCES Tags(id)
+);</string>
+			<key>table</key>
+			<string>Problema_Tag</string>
+			<key>view</key>
+			<string>SP_VIEW_CONTENT</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>214</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE faq;
+SET storage_engine = InnoDB;
+CREATE TABLE faq.Problemas (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    NomeProblema VARCHAR(150) NOT NULL,
+    SolucaoProblema TEXT NOT NULL,
+    created_at DATETIME,
+    updated_at DATETIME
+);
+CREATE TABLE faq.Tags (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    NomeTag VARCHAR(50) NOT NULL,
+    created_at DATETIME,
+    updated_at DATETIME
+);
+CREATE TABLE faq.Problemas_Tags (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    problema_id INT NOT NULL,
+    tag_id INT NOT NULL,
+    created_at DATETIME,
+    updated_at DATETIME,
+    FOREIGN KEY (problema_id) REFERENCES Problemas(id),
+    FOREIGN KEY (tag_id) REFERENCES Tags(id)
+)</string>
+		<string>drop database faq</string>
+		<string>CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE faq;
+SET storage_engine = InnoDB;
+CREATE TABLE faq.Problemas (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    NomeProblema VARCHAR(150) NOT NULL,
+    SolucaoProblema TEXT NOT NULL,
+    created_at DATETIME,
+    updated_at DATETIME
+);
+CREATE TABLE faq.Tags (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    NomeTag VARCHAR(50) NOT NULL,
+    created_at DATETIME,
+    updated_at DATETIME
+);
+CREATE TABLE faq.Problemas_Tags (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    problema_id INT NOT NULL,
+    tag_id INT NOT NULL,
+    created_at DATETIME,
+    updated_at DATETIME,
+    FOREIGN KEY (problema_id) REFERENCES Problemas(id),
+    FOREIGN KEY (tag_id) REFERENCES Tags(id),
+)</string>
+		<string>CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE faq;
+SET storage_engine = InnoDB;
+CREATE TABLE faq.Problemas (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    NomeProblema VARCHAR(150) NOT NULL,
+    SolucaoProblema TEXT NOT NULL,
+    created_at DATETIME,
+    updated_at DATETIME
+);
+CREATE TABLE faq.Tags (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    NomeTag VARCHAR(50) NOT NULL,
+    created_at DATETIME,
+    updated_at DATETIME
+);
+CREATE TABLE faq.TagMap (
+    IDTagMap INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    IDProblema INT NOT NULL,
+    IDTag INT NOT NULL,
+    FOREIGN KEY (IDProblema) REFERENCES Problemas(IDProblema),
+    FOREIGN KEY (IDTag) REFERENCES Tags(IDTag),
+)</string>
+		<string>ALTER TABLE TagMap AUTO_INCREMENT = 3</string>
+		<string>ALTER TABLE TagMap SET AUTO_INCREMENT = 3</string>
+		<string>CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE faq;
+SET storage_engine = InnoDB;
+CREATE TABLE faq.Problemas (
+	IDProblema INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeProblema VARCHAR(150) NOT NULL,
+	SolucaoProblema TEXT NOT NULL,
+	created_at DATETIME,
+	updated_at DATETIME
+);
+CREATE TABLE faq.Tags (
+	IDTag INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeTag VARCHAR(50) NOT NULL
+);
+CREATE TABLE faq.TagMap (
+	IDTagMap INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	IDProblema INT NOT NULL,
+	IDTag INT NOT NULL,
+	FOREIGN KEY (IDProblema) REFERENCES Problemas(IDProblema),
+	FOREIGN KEY (IDTag) REFERENCES Tags(IDTag)
+)</string>
+		<string>drop database faq;
+CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE faq;
+SET storage_engine = InnoDB;
+CREATE TABLE faq.Problemas (
+	IDProblema INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeProblema VARCHAR(150) NOT NULL,
+	SolucaoProblema TEXT NOT NULL,
+	created_at DATETIME,
+	updated_at DATETIME
+);
+CREATE TABLE faq.Tags (
+	IDTag INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeTag VARCHAR(50) NOT NULL
+);
+CREATE TABLE faq.TagMap (
+	IDTagMap INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	IDProblema INT NOT NULL,
+	IDTag INT NOT NULL,
+	FOREIGN KEY (IDProblema) REFERENCES Problemas(IDProblema),
+	FOREIGN KEY (IDTag) REFERENCES Tags(IDTag)
+)</string>
+		<string>drop database faq;
+CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE faq;
+SET storage_engine = InnoDB;
+CREATE TABLE faq.Problemas (
+	IDProblema INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeProblema VARCHAR(150) NOT NULL,
+	SolucaoProblema TEXT NOT NULL,
+	created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+CREATE TABLE faq.Tags (
+	IDTag INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeTag VARCHAR(50) NOT NULL
+);
+CREATE TABLE faq.TagMap (
+	IDTagMap INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	IDProblema INT NOT NULL,
+	IDTag INT NOT NULL,
+	FOREIGN KEY (IDProblema) REFERENCES Problemas(IDProblema),
+	FOREIGN KEY (IDTag) REFERENCES Tags(IDTag)
+)</string>
+		<string>drop database faq;
+CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE faq;
+SET storage_engine = InnoDB;
+CREATE TABLE faq.Problemas (
+	IDProblema INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeProblema VARCHAR(150) NOT NULL,
+	SolucaoProblema TEXT NOT NULL,
+	created_at TIMESTAMP NULL DEFAULT NOW(),
+	updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+CREATE TABLE faq.Tags (
+	IDTag INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeTag VARCHAR(50) NOT NULL
+);
+CREATE TABLE faq.TagMap (
+	IDTagMap INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	IDProblema INT NOT NULL,
+	IDTag INT NOT NULL,
+	FOREIGN KEY (IDProblema) REFERENCES Problemas(IDProblema),
+	FOREIGN KEY (IDTag) REFERENCES Tags(IDTag)
+)</string>
+		<string>drop database faq;
+CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE faq;
+SET storage_engine = InnoDB;
+CREATE TABLE faq.Problemas (
+	IDProblema INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeProblema VARCHAR(150) NOT NULL,
+	SolucaoProblema TEXT NOT NULL,
+	created_at TIMESTAMP NULL DEFAULT 0,
+	updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+CREATE TABLE faq.Tags (
+	IDTag INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeTag VARCHAR(50) NOT NULL
+);
+CREATE TABLE faq.TagMap (
+	IDTagMap INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	IDProblema INT NOT NULL,
+	IDTag INT NOT NULL,
+	FOREIGN KEY (IDProblema) REFERENCES Problemas(IDProblema),
+	FOREIGN KEY (IDTag) REFERENCES Tags(IDTag)
+)</string>
+		<string>drop database faq;
+CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE faq;
+SET storage_engine = InnoDB;
+CREATE TABLE faq.Problemas (
+	IDProblema INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeProblema VARCHAR(150) NOT NULL,
+	SolucaoProblema TEXT NOT NULL,
+	created_at TIMESTAMP NULL,
+	updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+CREATE TABLE faq.Tags (
+	IDTag INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeTag VARCHAR(50) NOT NULL
+);
+CREATE TABLE faq.TagMap (
+	IDTagMap INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	IDProblema INT NOT NULL,
+	IDTag INT NOT NULL,
+	FOREIGN KEY (IDProblema) REFERENCES Problemas(IDProblema),
+	FOREIGN KEY (IDTag) REFERENCES Tags(IDTag)
+)</string>
+		<string>drop database faq;
+CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE faq;
+SET storage_engine = InnoDB;
+CREATE TABLE faq.Problemas (
+	IDProblema INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeProblema VARCHAR(150) NOT NULL,
+	SolucaoProblema TEXT NOT NULL,
+	created_at TIMESTAMP NULL,
+	updated_at TIMESTAMP ON UPDATE NOW()
+);
+CREATE TABLE faq.Tags (
+	IDTag INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeTag VARCHAR(50) NOT NULL
+);
+CREATE TABLE faq.TagMap (
+	IDTagMap INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	IDProblema INT NOT NULL,
+	IDTag INT NOT NULL,
+	FOREIGN KEY (IDProblema) REFERENCES Problemas(IDProblema),
+	FOREIGN KEY (IDTag) REFERENCES Tags(IDTag)
+)</string>
+		<string>drop database faq;
+CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE faq;
+SET storage_engine = InnoDB;
+CREATE TABLE faq.Problemas (
+	IDProblema INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeProblema VARCHAR(150) NOT NULL,
+	SolucaoProblema TEXT NOT NULL,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP ON UPDATE NOW()
+);
+CREATE TABLE faq.Tags (
+	IDTag INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeTag VARCHAR(50) NOT NULL
+);
+CREATE TABLE faq.TagMap (
+	IDTagMap INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	IDProblema INT NOT NULL,
+	IDTag INT NOT NULL,
+	FOREIGN KEY (IDProblema) REFERENCES Problemas(IDProblema),
+	FOREIGN KEY (IDTag) REFERENCES Tags(IDTag)
+)</string>
+		<string>drop database faq;
+CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE faq;
+SET storage_engine = InnoDB;
+CREATE TABLE faq.Problemas (
+	IDProblema INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeProblema VARCHAR(150) NOT NULL,
+	SolucaoProblema TEXT NOT NULL,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE faq.Tags (
+	IDTag INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeTag VARCHAR(50) NOT NULL
+);
+CREATE TABLE faq.TagMap (
+	IDTagMap INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	IDProblema INT NOT NULL,
+	IDTag INT NOT NULL,
+	FOREIGN KEY (IDProblema) REFERENCES Problemas(IDProblema),
+	FOREIGN KEY (IDTag) REFERENCES Tags(IDTag)
+)</string>
+		<string>drop database faq;
+CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE faq;
+SET storage_engine = InnoDB;
+CREATE TABLE faq.Problemas (
+	IDProblema INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeProblema VARCHAR(150) NOT NULL,
+	SolucaoProblema TEXT NOT NULL,
+	created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+CREATE TABLE faq.Tags (
+	IDTag INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeTag VARCHAR(50) NOT NULL
+);
+CREATE TABLE faq.TagMap (
+	IDTagMap INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	IDProblema INT NOT NULL,
+	IDTag INT NOT NULL,
+	FOREIGN KEY (IDProblema) REFERENCES Problemas(IDProblema),
+	FOREIGN KEY (IDTag) REFERENCES Tags(IDTag)
+)</string>
+		<string>drop database faq;
+CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE faq;
+SET storage_engine = InnoDB;
+CREATE TABLE faq.Problemas (
+	IDProblema INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeProblema VARCHAR(150) NOT NULL,
+	SolucaoProblema TEXT NOT NULL,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+CREATE TABLE faq.Tags (
+	IDTag INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeTag VARCHAR(50) NOT NULL
+);
+CREATE TABLE faq.TagMap (
+	IDTagMap INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	IDProblema INT NOT NULL,
+	IDTag INT NOT NULL,
+	FOREIGN KEY (IDProblema) REFERENCES Problemas(IDProblema),
+	FOREIGN KEY (IDTag) REFERENCES Tags(IDTag)
+)</string>
+		<string>drop database faq;
+CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE faq;
+SET storage_engine = InnoDB;
+CREATE TABLE faq.Problemas (
+	IDProblema INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeProblema VARCHAR(150) NOT NULL,
+	SolucaoProblema TEXT NOT NULL,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+CREATE TABLE faq.Tags (
+	IDTag INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeTag VARCHAR(50) NOT NULL
+);
+CREATE TABLE faq.TagMap (
+	IDTagMap INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	IDProblema INT NOT NULL,
+	IDTag INT NOT NULL,
+	FOREIGN KEY (IDProblema) REFERENCES Problemas(IDProblema),
+	FOREIGN KEY (IDTag) REFERENCES Tags(IDTag)
+)</string>
+		<string>drop database faq;
+CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE faq;
+SET storage_engine = InnoDB;
+CREATE TABLE faq.Problemas (
+	IDProblema INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeProblema VARCHAR(150) NOT NULL,
+	SolucaoProblema TEXT NOT NULL,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+CREATE TABLE faq.Tags (
+	IDTag INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeTag VARCHAR(50) NOT NULL
+);
+CREATE TABLE faq.TagMap (
+	IDTagMap INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	IDProblema INT NOT NULL,
+	IDTag INT NOT NULL,
+	FOREIGN KEY (IDProblema) REFERENCES Problemas(IDProblema),
+	FOREIGN KEY (IDTag) REFERENCES Tags(IDTag)
+)</string>
+		<string>drop database faq;
+CREATE DATABASE IF NOT EXISTS faq CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE faq;
+SET storage_engine = InnoDB;
+CREATE TABLE faq.Problemas (
+	IDProblema INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeProblema VARCHAR(150) NOT NULL,
+	SolucaoProblema TEXT NOT NULL,
+	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+CREATE TABLE faq.Tags (
+	IDTag INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	NomeTag VARCHAR(50) NOT NULL
+);
+CREATE TABLE faq.TagMap (
+	IDTagMap INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	IDProblema INT NOT NULL,
+	IDTag INT NOT NULL,
+	FOREIGN KEY (IDProblema) REFERENCES Problemas(IDProblema),
+	FOREIGN KEY (IDTag) REFERENCES Tags(IDTag)
+)</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>5.5.29-log</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>

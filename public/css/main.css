@@ -1,0 +1,13 @@
+.input-custom-large {
+	font-size: 40px !important;
+	height: 100px !important;
+	line-height: 60px !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	border-bottom: 1px solid #CCC !important;
+	border-radius: 0 !important;
+}
+
+.search-targ-form {
+	padding: 15px 0;
+}
