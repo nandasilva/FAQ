@@ -1,0 +1,179 @@
+/**
+ * Bibliotecas com mixins
+ * @import
+ */
+@import "mixins/all.less";
+
+/**
+ * Reset
+ * De preferencia o Reset Meyer
+ * O clearless já utiliza, basta apenas usar .reset();
+ */
+.reset();
+
+/**
+ * Font-faces
+ * Utilizando o clearless
+ * .font-face('NomeDaFonte', 'CaminhoDaFotoSemExtensao');
+ * Exemplo
+ * .font-face('Din', '../fonts/DinMediumRegular');
+ */
+
+/**
+ * Custom Mixins
+ * Qualquer mixin que voce deseja criar
+ */
+
+/**
+ * Variáveis
+ */
+@using-ieclasses: true;
+@using-modernizr: true;
+
+/**
+ * Grid
+ * Caso for usar grid fazer a configuração com as seguintes variáveis
+ * @total-columns: 12;
+ * @column-width: 60px;
+ * @gutter-width: 20px;
+ */
+
+/**
+ * Custom Mixins
+ * Qualquer mixin que voce deseja criar
+ */
+.transition(@transition) {
+	-webkit-transition: @transition;
+	-moz-transition: @transition;
+	-ms-transition: @transition;
+	-o-transition: @transition;
+	transition: @transition;
+}
+
+.transform(@transform) {
+	-webkit-transform: @transform;
+	-moz-transform: @transform;
+	-ms-transform: @transform;
+	-o-transform: @transform;
+	transform: @transform;
+}
+
+/**
+ * Transições
+ */
+.btn-search,
+.btn-new-solution {
+	.transition(all 0.5s);
+}
+
+
+/**
+ * Body
+ */
+
+*{.box-sizing( border-box );}
+
+body {
+  	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  	color: #4e4e4f;
+}
+
+.wrap {
+	margin: 0 auto;
+	width: 960px;
+}
+
+/**
+ * HEADER PAGE
+ */
+.header-page {
+	position: relative;
+	margin-bottom: 50px;
+	border-top: 30px solid rgb(46, 46, 46);
+
+	.wrap {
+		overflow: hidden;
+		margin-top: -30px;
+	}
+}
+
+.container-left {
+	float: left;
+	width: 90%;
+}
+
+// Imagem da logo
+.logo {
+	margin-bottom: 20px;
+	background-color: #fff;
+}
+
+// Formulário de busca
+.form-search {
+	position: relative;
+	width: 80%;
+}
+.inp-search {
+	width: 100%;
+	height: 30px;
+	padding: 5px 10px;
+	font-size: 15px;
+	color: #4e4e4f;
+	border: 1px solid rgba(78,78,78, 0.5);
+	.border-radius(20px);
+	outline: none;
+}
+
+.in-focus {
+	.border-radius(20px);
+	border: 2px solid #509155;
+}
+
+.btn-search {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 30px;
+	border: 0;
+	background: url(../images/icon-lupa.png) no-repeat center center rgb(80, 145, 85);
+	cursor: pointer;
+	.border-radius(20px);
+
+	&:hover {
+		background-color: #246328;
+	}
+}
+
+// Botão adicionar solução
+.container-btn-new-solution {
+	position: fixed;
+	top: 80px;
+	right: 17.6%;
+}
+
+.btn-new-solution {
+	display: block;
+	width: 80px;
+	height: 80px;
+	padding-top: 11px;
+	background-color: rgb(80, 145, 85);
+	.border-radius(50%);
+	font-size: 50px;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+
+	&:hover {
+		background-color: #246328;
+	}
+}
+/* ================================== end/ header page */
+
+.container-main {
+	h4 {
+		font-family: 'Francois One', sans-serif;
+	}
+}
+
+// font-family: 'Nunito', sans-serif;

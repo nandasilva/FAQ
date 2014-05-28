@@ -1,0 +1,12 @@
+section.header-page
+	div.wrap
+		div.container-left
+			img(src="/images/logo-banco.png" alt="#{title}").logo
+
+			form.form-search(method='post', action='/empresas', enctype='multipart/form-data')
+				input.inp-search(type='text', name='term-search')
+
+				button.btn-search(type='submit')
+
+		div.container-btn-new-solution
+			a(href="#").btn-new-solution ✚
