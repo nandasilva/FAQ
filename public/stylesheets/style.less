@@ -59,13 +59,10 @@
 }
 
 /**
- * Transições
+ * Fonts
+ * Para textos: font-family: 'Istok Web', sans-serif;
+ * Para títulos: font-family: 'Cabin', sans-serif;
  */
-.btn-search,
-.btn-new-solution {
-	.transition(all 0.5s);
-}
-
 
 /**
  * Body
@@ -74,8 +71,75 @@
 *{.box-sizing( border-box );}
 
 body {
-  	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  	font: 14px "Istok Web", Helvetica, Arial, sans-serif;
+  	-webkit-font-smoothing: antialiased;
   	color: #4e4e4f;
+}
+
+/**
+ * Transições
+ */
+.btn-search,
+.btn-new-solution,
+.header-page,
+.container-left,
+.form-search,
+.inp-search,
+.container-btn-new-solution,
+.item-pagenav {
+	.transition(all 0.5s);
+}
+
+.header-page {
+	.transition(all 0.8s);
+}
+
+/**
+ * Estilos globais
+ */
+// Títulos
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Francois One', sans-serif;
+	font-weight: 800;
+}
+
+h1 {
+	font-size: 24px;
+}
+
+h2 {
+	font-size: 22px;
+}
+
+h3 {
+	font-size:20px;
+}
+
+h4 {
+	font-size: 18px;
+}
+
+h5 {
+	font-size: 16px;
+}
+
+h6 {
+	font-size: 14px;
+}
+
+a {
+	text-decoration: none;
+	color: #4e4e4f;
+}
+
+// Título principal da página
+.main-title {
+	margin-bottom: 30px;
+}
+
+strong {
+	margin-left: 5px;
+	font-weight: 700;
 }
 
 .wrap {
@@ -87,9 +151,11 @@ body {
  * HEADER PAGE
  */
 .header-page {
-	position: relative;
-	margin-bottom: 50px;
+	padding-bottom: 40px;
+	margin-bottom: 40px;
 	border-top: 30px solid rgb(46, 46, 46);
+	border-bottom: 2px solid rgb(46, 46, 46);
+	background: #fff;
 
 	.wrap {
 		overflow: hidden;
@@ -104,8 +170,10 @@ body {
 
 // Imagem da logo
 .logo {
+	width: 499px;
+	height: 160px;
 	margin-bottom: 20px;
-	background-color: #fff;
+	background: url(../images/logo-banco.png) no-repeat #fff;
 }
 
 // Formulário de busca
@@ -122,11 +190,11 @@ body {
 	border: 1px solid rgba(78,78,78, 0.5);
 	.border-radius(20px);
 	outline: none;
-}
 
-.in-focus {
-	.border-radius(20px);
-	border: 2px solid #509155;
+	&:focus {
+		.border-radius(20px);
+		border: 2px solid #509155;
+	}
 }
 
 .btn-search {
@@ -147,33 +215,168 @@ body {
 
 // Botão adicionar solução
 .container-btn-new-solution {
-	position: fixed;
-	top: 80px;
-	right: 17.6%;
+	float: right;
+	margin-top: 100px;
 }
 
 .btn-new-solution {
 	display: block;
 	width: 80px;
 	height: 80px;
-	padding-top: 11px;
+	padding-top: 9px;
 	background-color: rgb(80, 145, 85);
 	.border-radius(50%);
 	font-size: 50px;
 	color: #fff;
 	text-align: center;
-	text-decoration: none;
 
 	&:hover {
 		background-color: #246328;
 	}
 }
-/* ================================== end/ header page */
 
+
+// Cabeçalho reduzido e fixo
+.fixed-header-page {
+	position: fixed;
+	width: 100%;
+	background: #fff;
+
+	&.header-page {
+		height: 130px;
+		padding-bottom: 10px;
+		border-top-width: 22px;
+	}
+
+	.wrap {
+		margin-top: -22px;
+	}
+
+	.container-left {
+		width: 80%;
+	}
+
+	.logo {
+		float: left;
+		width: 79px;
+		height: 115px;
+		background-image: url(../images/logo-reduce.png);
+	}
+
+	.form-search {
+		float: right;
+		margin-top: 60px;
+	}
+
+	// Botão adicionar
+	.container-btn-new-solution {
+		margin-top: 34px;
+	}
+}
+/* ================================== end/ header page */
 .container-main {
-	h4 {
-		font-family: 'Francois One', sans-serif;
+	margin-bottom: 60px;
+}
+
+/**
+ * Posts recentes
+ */
+.recent-post {
+	padding: 30px 0 15px 0;
+	border-bottom: 1px dashed #787878;
+	line-height: 20px;
+
+	&:last-child {
+		border-bottom: 0;
 	}
 }
 
-// font-family: 'Nunito', sans-serif;
+// Autor e data do post
+.top-recent-post {
+	overflow: hidden;
+	padding: 10px;
+	background: rgba(78,78,78,0.1);
+}
+
+.author-solution {
+	float: left;
+}
+
+.date-solution {
+	float: right;
+}
+
+.content-recent-post {
+	padding: 10px;
+
+	a:hover {
+		color: #9a9a9a;
+	}
+
+	h4 {
+		margin-bottom: 10px;
+	}
+}
+
+
+/**
+ * PAGINAÇÃO
+ */
+.pagenav {
+	margin-bottom: 50px;
+
+	.wrap {
+		text-align: center;
+	}
+}
+
+.item-pagenav {
+	.inline-block();
+	padding: 4px 10px;
+	margin: 5px;
+	background: #ececec;
+	font-weight: 700;
+
+	&:hover,
+	&.is-active {
+		color: #ececec;
+		background: #787878;
+	}
+
+	&.is-active {
+		cursor: default;
+	}
+}
+
+/**
+ * Interna da solução
+ */
+.header-solution {
+	.main-title {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+}
+
+.data-solution {
+	font-style: italic;
+}
+
+// Conteúdo
+.section-content {
+	margin-bottom: 30px;
+	line-height: 25px;
+}
+
+.main-content-solution {
+	text-align: justify;
+
+	p {
+		margin-bottom: 20px;
+	}
+}
+
+.title-comment {
+	margin-bottom: 20px;
+}
+

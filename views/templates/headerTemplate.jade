@@ -1,7 +1,8 @@
 section.header-page
 	div.wrap
 		div.container-left
-			img(src="/images/logo-banco.png" alt="#{title}").logo
+			a(href="#" title="Banco de Soluções")
+				h1.logo
 
 			form.form-search(method='post', action='/empresas', enctype='multipart/form-data')
 				input.inp-search(type='text', name='term-search')

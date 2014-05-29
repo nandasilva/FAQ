@@ -18,13 +18,13 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-var clientes = require('./routes/clientes');
+var home = require('./routes/home');
+var busca = require('./routes/busca');
+var solucao = require('./routes/solucao');
 
-app.use('/', routes);
-app.use('/users', users);
-app.use('/clientes', clientes);
+app.use('/', home);
+app.use('/busca', busca);
+app.use('/solucao', solucao)
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

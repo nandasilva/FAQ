@@ -1,12 +1,18 @@
-// Input de busca no site
-$('.inp-search').focus(function() {
-	var self = $(this);
+/**
+ * Adiciona a classe fixed-header-page ao menu
+ */
+var headerSimple = document.querySelector(".header-page");
 
-	self.addClass('in-focus');
+addEventListener("scroll",function(e){
+
+	if(this.pageYOffset > 50){
+		headerSimple.classList.add("fixed-header-page");
+	} else {
+		headerSimple.classList.remove("fixed-header-page");
+	}
 });
 
-$('.inp-search').blur(function() {
-	var self = $(this);
-
-	self.removeClass('in-focus');
+// Anula o evento de click na paginação quando ativo
+$('.item-pagenav.is-active').on('click', function(e) {
+	e.preventDefault();
 });
